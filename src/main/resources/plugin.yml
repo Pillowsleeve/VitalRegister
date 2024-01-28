@@ -1,0 +1,25 @@
+name: VitalRegister
+version: '${project.version}'
+main: me.pixelperfect.vitalregister.VitalRegister
+api-version: '1.20'
+author: Pillowsleeve
+commands:
+  vitalregister:
+    description: "Basic Vital-Register Command"
+    aliases: [vr, vregister]
+  register:
+    description: "Register yourself on this server"
+  signin:
+    description: "Sign in to the server"
+default-permission: true
+permissions:
+  vital.register:
+    description: "Default permission string"
+  vital.register.menu:
+    description: "Permission to open the player menu"
+  vital.register.file:
+    description: "Permission to enable/disable/reload files"
+  vital.register.register:
+    description: "Permission to register yourself on the server"
+  vital.register.signin:
+    description: "Permission to sign in on the server"
