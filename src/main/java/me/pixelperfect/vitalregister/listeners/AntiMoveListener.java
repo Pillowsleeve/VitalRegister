@@ -17,14 +17,16 @@ public class AntiMoveListener implements Listener {
     @EventHandler
     public void onMoveNotSignedIn(PlayerMoveEvent event) {
         Player player = event.getPlayer();
-        if (!(data.getConfig().getBoolean("players." + player.getUniqueId() + ".is-signed-in"))) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou have to sign-in first!"));
-            event.setCancelled(true);
-            return;
-        }
-        if (!(data.getConfig().getBoolean("players." + player.getUniqueId() + ".is-registered"))) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou have to register and sign-in first!"));
-            event.setCancelled(true);
+        if (data.getConfig().getBoolean("enabled")) {
+            if (!(data.getConfig().getBoolean("players." + player.getUniqueId() + ".is-signed-in"))) {
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou have to sign-in first!"));
+                event.setCancelled(true);
+                return;
+            }
+            if (!(data.getConfig().getBoolean("players." + player.getUniqueId() + ".is-registered"))) {
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou have to register and sign-in first!"));
+                event.setCancelled(true);
+            }
         }
     }
 }
